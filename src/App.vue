@@ -39,11 +39,12 @@ import {Swiper, SwiperSlide} from "swiper/vue";
 import "swiper/css";
 
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 import "./style.css";
 
 // import required modules
-import {Pagination, Mousewheel} from "swiper";
+import {Pagination, Mousewheel, Navigation} from "swiper";
 
 export default {
   components: {
@@ -57,7 +58,7 @@ export default {
   },
   setup() {
     return {
-      modules: [Pagination, Mousewheel],
+      modules: [Pagination, Mousewheel, Navigation],
     };
   },
 };
@@ -66,4 +67,19 @@ export default {
 .swiper-slide{
   background-color: red;
 }
+
+.swiper-vertical .swiper-button-next, .swiper-vertical .swiper-button-prev {
+  left: 50%;
+  transform: rotate(90deg);
+  transform-origin: left center;
+}
+.swiper-vertical .swiper-button-prev {
+  top: 10px;
+}
+.swiper-vertical .swiper-button-next {
+  top: auto;
+  bottom: 10px;
+}
+
+
 </style>
